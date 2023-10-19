@@ -17,10 +17,12 @@ function view($path, $attributes=[]){
 }
 function base_path($path)
 {
-    return APP_ROOT . $path;
+    return realpath(APP_ROOT . $path);
 }
 
  function setEnvironment()
 {
     ini_set('default_charset', 'UTF-8');
+    define('CONFIG_PATH', APP_ROOT . '/app/Config');
+    define('CORE_PATH', APP_ROOT . '/src');
 }

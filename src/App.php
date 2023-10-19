@@ -1,6 +1,6 @@
 <?php
 
-namespace Varsha\Varframe\Application;
+namespace Varsha\Varframe;
 
 class App
 {
@@ -20,5 +20,10 @@ class App
     public static function resolve($key){
         return static::$container->resolve($key);
     }
+
+public function run()
+{
+
+}
 
 }

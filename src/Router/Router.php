@@ -12,7 +12,7 @@ class Router implements RouterInterface
 
     public function __construct()
     {
-        echo "Created<br>";
+
     }
     public function add(string $route, array $params = []): void
     {
@@ -31,8 +31,11 @@ class Router implements RouterInterface
         $this->routes[$route] = $params;
     }
 
-    public function dispatch(string $url): void
+    public function dispatch(string $url = null): void
     {
+
+        $url= empty($url) ? $_SERVER['REQUEST_URI']: $url;
+
         $parsed_url = parse_url($url);
         $path = trim($parsed_url['path'], '/');
         $path = explode('/', $path);
@@ -41,7 +44,7 @@ class Router implements RouterInterface
 
         if ($this->match($controller)) {
             echo "Found match <br>";
-            dump($this->params);
+            dd($this->params);
         } else {
             echo "No match found";
         }
@@ -49,9 +52,7 @@ class Router implements RouterInterface
 
     private function match(string $url): bool
     {
-        if (preg_match("/^\/beta/i", 'beta', $matches)) {
-            return true;
-        }
+
         foreach ($this->routes as $route => $params) {
            
             if (preg_match($route, $url, $matches)) {

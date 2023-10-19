@@ -13,10 +13,9 @@ class Application
     protected Router $route;
     protected RequestParser $request;
 
-    public function __construct(string $appRoot, Router $routes)
+    public function __construct(string $appRoot)
     {
         $this->appRoot = $appRoot;
-        $this->route = $routes;
         $this->request = new RequestParser();
     }
 
@@ -25,9 +24,8 @@ class Application
     public function run(): self
     {
 
-        $this->appContants();
-        // dump("Running Application");
-        $this->loadTheRouter();
+
+//        $this->loadTheRouter();
 
         return $this;
     }

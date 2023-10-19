@@ -1,8 +1,4 @@
 <?php
 
 
-use Varsha\Varframe\Router\Router;
-
-$routes = new Router();
-
-$routes->add("beta", ['Home::index']);
+$router->add("beta", ['Home::index']);
