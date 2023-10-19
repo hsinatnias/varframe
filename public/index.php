@@ -12,7 +12,7 @@ require APP_ROOT.'src/functions.php';
 setEnvironment();
 
 require realpath(CORE_PATH.'/bootstrap.php');
-require APP_ROOT.'/app/Config/Routes.php';
+
 
 
 
