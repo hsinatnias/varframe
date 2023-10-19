@@ -1,0 +1,24 @@
+{
+    "name": "varsha/varframe",
+    "description": "A simple PHP framework",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Varsha\\Varframe\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Anish",
+            "email": "anishvm@live.in"
+        }
+    ],
+    "minimum-stability": "alpha",
+    "require": {
+
+    },
+    "require-dev": {
+
+    }
+}
